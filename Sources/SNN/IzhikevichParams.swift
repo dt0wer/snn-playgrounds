@@ -6,9 +6,9 @@
 //
 
 public struct IzhikevichExtra: Codable, Sendable, Hashable {
-	let uLimit: Double?
-	let bLimit: Double?
-	let bL: Double?
+	let uLimit: Double?		// upper limit for u parameter (LTS neurons)
+	let bLimit: Double?		// v treshold if b is voltage-dependent
+	let bL: Double?			// fixes b value after v treshold for thalamic
 }
 
 // Izhikevich Model Parameters

@@ -72,7 +72,7 @@ public extension Izhikevich {
 		let p = IzhikevichParams(
 			a: 0.01, b: 5, c: -60, d: 400,
 			type: .excitatory, code: "RS", description: "Regular spiking",
-			vr: 50, vp: 3, k: 100, C: -60, vt: -50
+			vr: -60, vp: 50, k: 3, C: 100, vt: -50
 		)
 		return Izhikevich(p)
 	}

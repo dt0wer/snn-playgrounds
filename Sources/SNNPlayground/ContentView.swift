@@ -91,7 +91,7 @@ struct ChartPoint: Hashable {
 				if neuron.updateState(by: dummySynapseOutput) {
 					spikes.append(spikes.count)
 				}
-				
+								
 				V.append(ChartPoint(v: neuron.V))
 				if V.count > 1000 { V.removeFirst() }
 				

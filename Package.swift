@@ -10,9 +10,6 @@ let package = Package(
 	],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-//        .library(
-//            name: "SNN",
-//            targets: ["SNN"]),
 		.executable(name: "SNNPlayground", targets: ["SNNPlayground"])
     ],
     targets: [
