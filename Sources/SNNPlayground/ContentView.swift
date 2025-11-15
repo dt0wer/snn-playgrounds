@@ -87,7 +87,8 @@ struct ChartPoint: Hashable {
 			isRun = true
 			
 			while !Task.isCancelled {
-				if neuron.updateState((0, 0), constI: await I()) {
+				let dummySynapseOutput = TotalSynapseOutput(neuronG: 0, neuronGiEi: 0, Iconst: await I())
+				if neuron.updateState(by: dummySynapseOutput) {
 					spikes.append(spikes.count)
 				}
 				
@@ -102,12 +103,8 @@ struct ChartPoint: Hashable {
 	}
 	
 	init() {
-		params = IzhikevichParams(
-			a: 0.01, b: 5, c: -60, d: 400,
-			type: .excitatory, code: "RS", description: "Regular spiking",
-			vP: 50, k: 3, C: 100, vr: -60, vt: -50
-		)
-		neuron = Izhikevich(params)
+		neuron = Izhikevich.defaultRegularSpiking()
+		params = neuron.params
 	}
 }
 
